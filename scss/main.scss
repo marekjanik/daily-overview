@@ -1,0 +1,442 @@
+/* ==========================================================================
+   Main SCSS file
+   ========================================================================== */
+
+/* Import
+   ========================================================================== */
+@import '00-settings/*';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
+
+/* Variables
+   ========================================================================== */
+$main: #4e74ff;
+$nav: #8c909d;
+$status: #d7dbe8;
+$news: #42444d;
+$background: #F6F6F6;
+$font: 'Open Sans';
+
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.page-home {
+   max-width: 1200px;
+   min-height: 800px;
+   margin: 0 auto;
+   background: rgb(78, 116, 255);
+   background: linear-gradient(320deg, rgba(78, 116, 255, 1) 31%, rgba(246, 246, 246, 1) 31%);
+}
+
+.header {
+   padding: 32px 47px;
+
+   &__logo {
+      margin-right: 56px;
+   }
+
+   &__logo-icon {
+      width: 32px;
+      height: 32px;
+      border: 4px solid $main;
+      border-radius: 50%;
+      display: inline-block;
+   }
+
+   &__list-element {
+      display: inline-block;
+      vertical-align: middle;
+   }
+
+
+   &__link {
+      margin-right: 28px;
+      font-family: $font;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      color: $nav;
+      height: 24px;
+      display: inline-block;
+      line-height: 24px;
+      margin-bottom: 2px;
+      position: relative;
+      transition: .3s;
+      margin-left: -1.5px;
+
+      &:hover {
+         color: $main;
+      }
+
+      &::before {
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         content: "";
+         width: 0%;
+         border-bottom: 2px solid $main;
+         transition: .2s;
+      }
+
+      &:hover::before {
+         width: 50%;
+      }
+   }
+
+   &__unread {
+      width: 24px;
+      height: 24px;
+      padding: 5px;
+      border-radius: 50%;
+      background-color: $nav;
+      font-family: $font;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+      margin-left: 9px;
+      display: inline-block;
+      line-height: 13px;
+   }
+
+   &__user-menu {
+      text-align: right;
+      padding: 0;
+      margin-right: -12px;
+   }
+
+   &__user-img {
+      width: 30px;
+      height: 30px;
+      margin-right: 9px;
+   }
+
+   &__user-name {
+      font-family: $font;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: bold;
+      color: $main;
+      vertical-align: top;
+      line-height: 30px;
+      margin-right: 36px;
+   }
+
+   &__hamburger {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 8px;
+      margin-left: -8px;
+   }
+
+   &__hamburger-img {
+      width: 24px;
+      height: 16px;
+   }
+}
+
+@media (max-width: 872px) {
+   .header__nav-menu {
+      display: none;
+   }
+}
+
+@media (max-width: 294px) {
+   .header__user-name {
+      display: none;
+   }
+}
+
+.hero {
+   display: inline-block;
+   max-width: 496px;
+   margin-left: 30px;
+
+   &__greeting {
+      margin-top: 100px;
+      margin-bottom: 92px;
+   }
+
+   &__greeting-text {
+      text-transform: uppercase;
+      font-family: $font;
+      font-size: 64px;
+      font-weight: 800;
+      background-image: linear-gradient(166deg, #4e74ff -3%, #2046d1 118%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+   }
+
+   &__news-element {
+      display: inline-block;
+      margin-bottom: 80px;
+   }
+
+   &__news-icon {
+      display: inline-block;
+      text-align: center;
+      padding-top: 16px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background-color: $news;
+      position: relative;
+      margin-right: 19px;
+   }
+
+   &__news-notification {
+      position: absolute;
+      top: -10%;
+      right: -10%;
+      width: 29px;
+      height: 29px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background-color: $main;
+      font-family: $font;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+   }
+
+   &__news-img {
+      width: 31px;
+      height: 31px;
+   }
+
+   &__news-text {
+      text-transform: uppercase;
+      font-family: $font;
+      font-size: 20px;
+      font-weight: 800;
+      color: $news;
+      display: inline-block;
+      margin-right: 66px;
+      vertical-align: top;
+      line-height: 64px;
+   }
+
+   &__progress-element {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+   }
+
+   &__progress-img {
+      width: 30px;
+      height: 30px;
+      margin-right: 13.7px;
+   }
+
+   &__progress-status {
+      display: inline-block;
+   }
+
+   &__progress-name {
+      font-family: $font;
+      font-size: 14px;
+      color: $news;
+      margin-bottom: 6px;
+   }
+
+   &__progress-level {
+      width: 155px;
+      height: 4px;
+      background-color: $status;
+   }
+
+   &__progress-html::before {
+      display: block;
+      content: "";
+      width: 78px;
+      height: 4px;
+      background-color: $main;
+   }
+
+   &__progress-css::before {
+      display: block;
+      content: "";
+      width: 113px;
+      height: 4px;
+      background-color: $main;
+   }
+
+   &__slider {
+      display: inline-block;
+      margin-top: 20px;
+   }
+
+   &__slider-element {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #dedede;
+   }
+
+   &__slider-element--active {
+      background-color: $main;
+   }
+}
+
+@media (max-width: 317px) {
+   .hero {
+      margin: 0 auto;
+
+      &__greeting-text {
+         font-size: 44px;
+         padding-left: 15px;
+      }
+
+      &__news {
+         text-align: center;
+      }
+
+      &__news-element {
+         margin-right: 15px;
+         margin-left: 15px;
+      }
+
+      &__news-text {
+         display: none;
+      }
+
+      &__progress-element {
+         justify-content: center;
+      }
+   }
+}
+
+.calendar {
+   display: inline-block;
+   vertical-align: top;
+   width: 350px;
+   margin-left: 150px;
+   margin-top: 100px;
+
+   &__frame {
+      width: 350px;
+      height: 460px;
+      border-radius: 10px;
+      background-color: $news;
+      opacity: .92;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__date {
+      text-align: center;
+   }
+
+   &__date-day {
+      font-family: $font;
+      font-size: 140px;
+      font-weight: bold;
+      color: $main;
+   }
+
+   &__date-month {
+      text-transform: uppercase;
+      font-family: $font;
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 45px;
+   }
+
+   &__days {
+      text-align: center;
+   }
+
+   &__day {
+      display: inline-block;
+      width: 41px;
+      height: 19px;
+      text-align: center;
+      font-family: $font;
+      font-size: 14px;
+      font-weight: bold;
+      color: $main;
+      margin-bottom: 21px;
+
+      &:nth-of-type(1) {
+         margin-left: 90px;
+      }
+
+      &:nth-of-type(30) {
+         margin-right: 135px;
+      }
+   }
+
+   &__day--current {
+      display: block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 50%;
+      background-color: $main;
+      color: #fff;
+      margin-top: -17px;
+   }
+}
+
+@media (max-width: 1076px) {
+   .calendar {
+      margin-left: 0;
+   }
+}
+
+@media (max-width: 927px) {
+   .page-home {
+      background-image: none;
+      background-color: $background;
+   }
+
+   .hero {
+      display: block;
+      margin: 0 auto;
+
+      &__footer {
+         display: none;
+      }
+   }
+
+   .calendar {
+      display: none;
+   }
+
+}
+
+.footer {
+   margin-top: 130px;
+   width: 450px;
+   text-align: right;
+
+   &__text {
+      text-transform: uppercase;
+      font-family: $font;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+   }
+
+   &__span {
+      text-decoration: underline;
+      font-weight: bold;
+   }
+}
+
+@media (max-width: 1160px) {
+   .footer {
+      display: none;
+   }
+}
